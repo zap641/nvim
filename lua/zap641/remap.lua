@@ -2,11 +2,11 @@
 vim.g.mapleader = " "
 
 --enter file view ("project view")
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>et", vim.cmd.Ex)
 
 -- Moves highlighted text up or down lines
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '>+1<CR>gv=gv")
 
 -- Keeps curser centred
 vim.keymap.set("n", "J", "mzJ`z")
@@ -33,18 +33,13 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- Quickfix commands for compilers
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<C-Down>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-Up>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>Down", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>Up", "<cmd>lprev<CR>zz")
 
 -- Replaces word underneath curser throughout the whole file
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
--- Initializes file
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
+vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Terminal mode
 vim.keymap.set('t', '<C-c>', "<C-Bslash><C-n>")
