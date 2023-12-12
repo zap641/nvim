@@ -1,10 +1,7 @@
-local function run_curr_python_file()
-    -- Get file name in the current buffer
-    local file_name = vim.api.nvim_buf_get_name(0)
-
+local function run_curr_rust_program()
     -- Get terminal codes for running python file
     -- ("i" to enter insert before typing rest of the command)
-    local py_cmd = vim.api.nvim_replace_termcodes("ipython \"" .. file_name .. "\"<cr>", true, false, true)
+    local rust_cmd = vim.api.nvim_replace_termcodes("icargo run <cr>", true, false, true)
 
     -- Determine terminal window split and launch terminal
     local percent_of_win = 0.4
@@ -13,10 +10,10 @@ local function run_curr_python_file()
     vim.cmd(":below " .. term_height .. "split | term pwsh") -- Launch terminal (horizontal split)
 
     -- Press keys to run python command on current file
-    vim.api.nvim_feedkeys(py_cmd, "t", false)
+    vim.api.nvim_feedkeys(rust_cmd, "t", false)
 end
 
-vim.keymap.set({'n'}, '<A-p>', '', { 
+vim.keymap.set({'n'}, '<A-r>', '', { 
     desc = "Run .py file via Neovim built-in terminal", 
-    callback = run_curr_python_file
+    callback = run_curr_rust_program
 })
