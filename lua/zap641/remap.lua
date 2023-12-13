@@ -42,5 +42,5 @@ vim.keymap.set("n", "<leader>Up", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Terminal mode
-vim.keymap.set('t', '<C-c>', "<C-Bslash><C-n>")
-vim.keymap.set('t', '<esc>', '<C-Bslash><C-N>')
+vim.keymap.set('t', '<C-c>', "<C-Bslash><C-n>:q<CR>")
+vim.keymap.set('t', '<esc>', '<C-Bslash><C-N>:q<CR>')
