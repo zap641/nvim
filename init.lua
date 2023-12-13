@@ -1,1 +1,2 @@
-require("zap641")
+require "core"
+require "plugins"
