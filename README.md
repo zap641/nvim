@@ -1,2 +1,2 @@
 # Nvim config
-My old nvim config files before I started using NvChad
+My current nvim config
