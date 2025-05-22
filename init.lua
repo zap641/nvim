@@ -24,5 +24,5 @@ vim.cmd.colorscheme('retrobox')
 
 vim.g.mapleader = " "
 
-vim.keymap.set('n', '<leader><space>', '<cmd>files<cr>:buffer ', {desc = 'Search open files'})
+vim.keymap.set('n', '<leader>fb', '<cmd>files<cr>:buffer ', {desc = 'Search open files'})
 vim.keymap.set('n', '<leader>e', '<cmd>:Ex<cr>', {desc = 'Search open files'})
